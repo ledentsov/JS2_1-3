@@ -1,0 +1,12 @@
+﻿{
+	"menu_items": [
+		{"href": "/", "title": "Главная", "id": "id1"},
+		{"href": "/catalogue", "title": "Каталог", "id": "id1"},
+		{"href": "/1", "title": "суб1", "id": "id2"},
+		{"href": "/1", "title": "суб2", "id": "id2"},
+		{"href": "/1", "title": "суб3", "id": "id2"},
+		{"href": "/1", "title": "суб4", "id": "id2"},
+		{"href": "/gallery", "title": "Галерея", "id": "id1"}
+
+	]
+}
