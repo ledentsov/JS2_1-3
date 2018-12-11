@@ -14,7 +14,7 @@
         font-size: 14px;
         line-height: 26px;
         text-align: center;
-        &:hover +.b-menuClass__submenuItem{
+        &:hover .b-menuClass__submenuItem{
             display: block;
             background-color: rgb(156, 52, 52);
         }
