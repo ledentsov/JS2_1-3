@@ -42,6 +42,11 @@ ul {
   list-style-type: none;
 }
 
+li:hover.b-menuClass__submenuItem {
+  display: block;
+  background-color: #9c3434;
+}
+
 #id3:hover .b-menuClass__submenuItem {
   display: block;
   background-color: #9c3434;

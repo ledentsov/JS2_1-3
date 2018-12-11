@@ -46,6 +46,11 @@ ul{
     list-style-type: none;
     
 }
+li:hover.b-menuClass__submenuItem{
+    display: block;
+    background-color: rgb(156, 52, 52);
+}
+
 #id3:hover .b-menuClass__submenuItem{
     display: block;
     background-color: rgb(156, 52, 52);
