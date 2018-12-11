@@ -19,18 +19,17 @@ function Menu(my_id, my_class, my_items) {
 Menu.prototype = Object.create(Container.prototype);
 Menu.prototype.constructor = Menu;
 Menu.prototype.render = function() {
-	let result = '<ul class="' + this.className + '" id="' + this.id + '">';
+	let result = '<head><link rel="stylesheet" href="./styles/styles.css"></head> <ul class="' + this.className + '" id="' + this.id + '">';
 
 	for(let item in this.items) {
-		if(this.items[item] instanceof MenuItem && this.items[item].id == "id1"){
+		if(this.items[item] instanceof MenuItem && this.items[item].id != "id2"){
 			result += this.items[item].render();
 			
 		}
-		else if(this.items[item].id == "id2"){
+		else {
 			result +='<ul>';
 			result += this.items[item].render();
 			result +='</ul>';
-			
 		}
 	};
 
@@ -41,8 +40,8 @@ Menu.prototype.render = function() {
 function MenuItem(my_href, my_name, my_id) {
 	Container.call(this);
 	this.id = my_id;
-	if(my_id=="id1"){this.className = "menu-item";
-		}else this.className = "submenu-item"
+	if(my_id !="id2"){this.className = "b-menuClass__menuItem";
+		}else this.className = "b-menuClass__submenuItem"
 	this.href = my_href;
 	this.name = my_name;
 };
@@ -50,22 +49,15 @@ function MenuItem(my_href, my_name, my_id) {
 MenuItem.prototype = Object.create(Container.prototype);
 MenuItem.prototype.constructor = MenuItem;
 MenuItem.prototype.render = function() {
-	return '<li class=' + this.className + '>' + this.name + '</li>';
+	return '<li class=' + this.className + '>' + '<a href=" ' + this.href +'">' + this.name + '</a>' + '</li>';
 };
-
-
-
 
 // let m_item1 = new MenuItem("/", "Главная","id1");
 // let m_item2 = new MenuItem("/catalogue", "Каталог","id1");
 // let m_item3 = new MenuItem("/gallery", "Галерея","id1");
 // let m_subItem1 = new MenuItem("/1", "суб1","id2");
 // let m_subItem2 = new MenuItem("/2", "суб2","id2");
-
 // let m_items = {0: m_item1, 1: m_subItem1, 2: m_subItem2, 3: m_item2, 4: m_item3};
-
-
-
 // let menu = new Menu("my_menu", "menu_class", m_items);
 // document.write(menu.render());
 
@@ -80,7 +72,7 @@ function fillMenuContents(xhr) {
 				m_items[currentitem.title] = new MenuItem(currentitem.href, currentitem.title, currentitem.id);
 			}
 
-			let menu = new Menu("my_menu", "menu_class", m_items);
+			let menu = new Menu("my_menu", "b-menuClass", m_items);
 			document.write(menu.render());
 		}
 	} else {
