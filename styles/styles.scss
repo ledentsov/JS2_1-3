@@ -3,7 +3,8 @@
 //     display: block;
 //     background-color: rgb(156, 52, 52);
 // }
-#idmenu{
+#idMenu{
+    display: block;
     height: 5000px;
     width: auto;
 }
@@ -12,16 +13,17 @@ body {
     width: auto;
 }
 .b-menuClass{
-    
+    display: block;
     list-style-type: none;
     width: 500px;
-    float: left;
+    
     
     
 
     
 
     &__menuItem{
+        display: block;
         margin-top: 3px;
         background-color: rgb(63, 63, 63);
         width: 120px;
@@ -42,7 +44,6 @@ body {
     
     &__submenuItem{
         display: none;
-        margin-top: 1px;
         background-color: rgb(63, 63, 63);
         width: 120px;
         height: 30px;
@@ -51,6 +52,7 @@ body {
         line-height: 26px;
         text-align: center;
         float: left;
+           
         &:hover .b-menuClass__submenuItem{
             display: block;
             background-color: rgb(160, 158, 158);
@@ -72,5 +74,28 @@ ul{
     font-family: 'Times New Roman', Times, serif;
 }
 
-
-
+.b-galleryBoton{
+        margin-top: 3px;
+        background-color: rgb(63, 63, 63);
+        width: 150px;
+        height: auto;
+        font-weight: 400;
+        font-size: 14px; 
+        line-height: 26px;
+        text-align: center;
+        border: 4px double rgb(255, 255, 255);
+        &:hover{
+            border: 4px double black;
+                       
+        }
+}
+.b-galleryClass{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    
+    &__galleryItem{
+        margin:  3px;
+    
+    }
+}

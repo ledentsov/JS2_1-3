@@ -1,0 +1,8 @@
+{
+	"menu_items": [
+		{"src": "./img/1.jpg", "title": "Рис", "id": "id1"},
+		{"src": "./img/2.jpg", "title": "Рис1", "id": "id1"},
+		{"src": "./img/3.jpg", "title": "Рис2", "id": "id1"}
+
+	]
+}
