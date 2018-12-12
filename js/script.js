@@ -1,3 +1,4 @@
+var idMenu = document.getElementById("idMenu");
 function Container() {
 	this.id = "";
 	this.className = "";
@@ -19,21 +20,25 @@ function Menu(my_id, my_class, my_items) {
 Menu.prototype = Object.create(Container.prototype);
 Menu.prototype.constructor = Menu;
 Menu.prototype.render = function() {
-	let result = '<head><link rel="stylesheet" href="./styles/styles.css"></head> <ul class="' + this.className + '" id="' + this.id + '">';
-
+	let result = '<ul class="' + this.className + '" id="' + this.id + '">';
+	let idcheck = "id1";
 	for(let item in this.items) {
+		
 		if(this.items[item] instanceof MenuItem && this.items[item].id != "id2"){
+			if(idcheck=="id2"){result +='</ul>'};
 			result += this.items[item].render();
-			
+			idcheck = "id1";
 		}
-		else {
-			result +='<ul>';
+		else { 
+			if(idcheck=="id1"){
+					result = result.slice(0,-5);
+					result +='<ul>';
+				};
 			result += this.items[item].render();
-			result +='</ul>';
+			idcheck = "id2";
 		}
 	};
-
-	result += '</ul>'
+	result +='<ul>';
 	return result;
 };
 
@@ -49,7 +54,7 @@ function MenuItem(my_href, my_name, my_id) {
 MenuItem.prototype = Object.create(Container.prototype);
 MenuItem.prototype.constructor = MenuItem;
 MenuItem.prototype.render = function() {
-	return '<li class=' + this.className + '>' + '<a href=" ' + this.href +'">' + this.name + '</a>' + '</li>';
+	return '<li class=' + this.className + ' id=' + this.id + '>' + '<a href=" ' + this.href +'">' + this.name + '</a>' + '</li>';
 };
 
 // let m_item1 = new MenuItem("/", "Главная","id1");
@@ -73,7 +78,7 @@ function fillMenuContents(xhr) {
 			}
 
 			let menu = new Menu("my_menu", "b-menuClass", m_items);
-			document.write(menu.render());
+			idMenu.innerHTML = menu.render();
 		}
 	} else {
 		alert("Ошибка выполнения запроса!");
