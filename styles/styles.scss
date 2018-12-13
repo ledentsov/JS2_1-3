@@ -96,6 +96,9 @@ ul{
     
     &__galleryItem{
         margin:  3px;
+        &:hover{
+            border: 4px double rgb(154, 204, 204);
+        }
     
     }
 }

@@ -91,4 +91,8 @@ ul {
 .b-galleryClass__galleryItem {
   margin: 3px;
 }
+
+.b-galleryClass__galleryItem:hover {
+  border: 4px double #9acccc;
+}
 /*# sourceMappingURL=styles.css.map */

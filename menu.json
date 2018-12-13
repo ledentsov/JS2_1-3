@@ -6,7 +6,8 @@
 		{"href": "/1", "title": "Самокаты", "id": "id2"},
 		{"href": "/1", "title": "Велосипеды", "id": "id2"},
 		{"href": "/1", "title": "Роликовые коньки", "id": "id2"},
-		{"href": "./gallery.html", "title": "Галерея", "id": "id1"}
+		{"href": "./gallery.html", "title": "Галерея", "id": "id1"},
+		{"href": "./Feedback.html", "title": "Обратная связь", "id": "id1"}
 
 	]
 }
